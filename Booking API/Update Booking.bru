@@ -1,0 +1,15 @@
+meta {
+  name: Update Booking
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/bookings/{id}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,7 +1,11 @@
-
 package com.example.booking_api.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -13,15 +17,20 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @NotBlank
     @Column(nullable = false)
     private String name;
 
+    @NotBlank
+    @Email
     @Column(nullable = false)
     private String email;
 
+    @NotNull
     @Column(name = "date_time", nullable = false)
     private LocalDateTime dateTime;
 
+    @Min(1)
     @Column(name = "number_of_people", nullable = false)
     private int numberOfPeople;
 
