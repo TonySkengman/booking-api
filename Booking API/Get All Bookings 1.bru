@@ -1,0 +1,17 @@
+meta {
+  name: Get All Bookings
+  type: http
+  seq: 8
+}
+
+get {
+  url: GET http://localhost:3002/bookings
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}
